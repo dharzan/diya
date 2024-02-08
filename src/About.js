@@ -24,21 +24,22 @@ const SpinningCube = ({ scroll }) => {
     )
 }
 
-const About = () => {
-    const spin =  useScrollPosition()
+const About = ({ isDarkMode }) => {
+    const spin = useScrollPosition()
     return (
-        <div style = {{height:'200vh'}}>
-            <h1>About Me</h1>
-          
-            <p>Hi, I'm Diya, Bioengineering Student </p>
-            
+        <div style={{ height: '600vh' }}>
+            <h1 style={{color: isDarkMode ? 'green' : 'black'}}>About Me</h1>
 
-
+            <p style={{color: isDarkMode ? 'white' : 'black'}}>Hi, I'm Diya, Bioengineering Student </p>
 
             <div id="3D-model-Avatar-placeholder"> </div>
         </div>
 
     )
+}
+const Facts = () => {
+
+    
 }
 
 export default About;

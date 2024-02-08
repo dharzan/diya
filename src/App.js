@@ -71,12 +71,12 @@ const Scene = () => {
   const toggleDarkMode = () => { setIsDarkMode(!isDarkMode)};
 
   return (
-    <div style={{ height: '200vh', background: isDarkMode ? '#333': 'transparent', backgroundBlendMode:"darken", backgroundColor: '#333' }}>
+    <div style={{ height: '200vh' }}>
     <button onClick={toggleDarkMode}>
-      DarkModes
+      DarkMode
     </button>
-    <About/>
-      <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1, background: "black"}}>
+    <About isDarkMode={isDarkMode}/>
+      <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1, background: isDarkMode? 'black': 'transparent'}}>
       <perspectiveCamera position={[0,0,5]}/>
         <ambientLight intensity={0.5} />
         <pointLight position={[3, 4, 2]} />
