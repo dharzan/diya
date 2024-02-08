@@ -25,7 +25,7 @@ const SpinningCube = ({ scroll }) => {
 }
 
 const About = () => {
-const spin =  useScrollPosition()
+    const spin =  useScrollPosition()
     return (
         <div style = {{height:'200vh'}}>
             <h1>About Me</h1>

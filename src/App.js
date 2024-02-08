@@ -15,10 +15,13 @@ function Cube({ spin }) {
   const texture3 = useLoader(TextureLoader, diya2);
 
 
+ 
+
+
   useFrame(() => {
-    const rotationSpeed = spin * 0.00001;
-    meshRef.current.rotation.x += rotationSpeed;
-    meshRef.current.rotation.y += rotationSpeed;
+    const rotationSpeed = spin * 0.005;
+    
+    meshRef.current.rotation.y = rotationSpeed;
   });
 
 
@@ -28,12 +31,12 @@ function Cube({ spin }) {
 
       <boxGeometry args={[2, 2, 2]} />
 
-      <meshBasicMaterial attach="material-0" map={texture3} />
-      <meshBasicMaterial attach="material-1"map={texture3}/>
-      <meshBasicMaterial attach="material-2" map={texture4} />
-      <meshBasicMaterial attach="material-3" map={texture4}/>
-      <meshBasicMaterial attach="material-4" map={texture3} />
-      <meshBasicMaterial attach="material-5" map={texture3} />
+      <meshBasicMaterial attach="material-0" map={texture3} color={"#999999"} />
+      <meshBasicMaterial attach="material-1" map={texture4} color={"#999999"} />
+      <meshBasicMaterial attach="material-2" map={texture4} color={"#999999"} />
+      <meshBasicMaterial attach="material-3" map={texture4} color={"#999999"} />
+      <meshBasicMaterial attach="material-4" map={texture4} color={"#999999"} />
+      <meshBasicMaterial attach="material-5" map={texture3} color={"#999999"} />
       
 
 
@@ -46,11 +49,13 @@ export function Scene1 (){
 
   const spin = useScrollPosition();
   return (
-    <div style={{ height: '200vh' }}>
+    <div style={{ height: '100vh' }}>
     
       <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+        
+        
         <ambientLight intensity={.5} />
-        <pointLight position={[2, 2, 2]} />
+        <pointLight position={[2, 2, 10]} />
         <Cube  spin={spin} />
       </Canvas>
 
@@ -66,12 +71,13 @@ const Scene = () => {
   const toggleDarkMode = () => { setIsDarkMode(!isDarkMode)};
 
   return (
-    <div style={{ height: '200vh', background: isDarkMode ? '#333': 'transparent' }}>
+    <div style={{ height: '200vh', background: isDarkMode ? '#333': 'transparent', backgroundBlendMode:"darken", backgroundColor: '#333' }}>
     <button onClick={toggleDarkMode}>
-      DarkMode
+      DarkModes
     </button>
     <About/>
-      <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1}}>
+      <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1, background: "black"}}>
+      <perspectiveCamera position={[0,0,5]}/>
         <ambientLight intensity={0.5} />
         <pointLight position={[3, 4, 2]} />
         <Cube spin={spin} />
