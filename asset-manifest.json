@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/diyadhyani.github.io/static/css/main.f855e6bc.css",
+    "main.js": "/diyadhyani.github.io/static/js/main.9b3fbaa4.js",
+    "static/js/592.fc2afc69.chunk.js": "/diyadhyani.github.io/static/js/592.fc2afc69.chunk.js",
+    "static/media/diya2.jpeg": "/diyadhyani.github.io/static/media/diya2.11897fba212b55b1ffbc.jpeg",
+    "static/media/diya.png": "/diyadhyani.github.io/static/media/diya.64afa3881e9d39c221cf.png",
+    "index.html": "/diyadhyani.github.io/index.html",
+    "main.f855e6bc.css.map": "/diyadhyani.github.io/static/css/main.f855e6bc.css.map",
+    "main.9b3fbaa4.js.map": "/diyadhyani.github.io/static/js/main.9b3fbaa4.js.map",
+    "592.fc2afc69.chunk.js.map": "/diyadhyani.github.io/static/js/592.fc2afc69.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.9b3fbaa4.js"
+  ]
+}
