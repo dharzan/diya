@@ -19,8 +19,8 @@ function Cube({ spin }) {
     const rotationSpeed = spin * 0.005;
     
     meshRef.current.rotation.y = rotationSpeed;
+    meshRef.current.rotation.x = rotationSpeed;
    
-    meshRef.current.rotation.zIndex = rotationSpeed;
     
   });
 
@@ -45,37 +45,4 @@ function Cube({ spin }) {
 
 };
 
-const Scene = () => {
-
-  const spin = useScrollPosition();
-  const[isDarkMode, setIsDarkMode] = React.useState(true);
-  const toggleDarkMode = () => { setIsDarkMode(!isDarkMode)};
-
-  return (
-    <div style={{ height: '200vh' }}>
-    <button onClick={toggleDarkMode}>
-      DarkMode
-    </button>
-    <About isDarkMode={isDarkMode}/>
-      <Canvas style={{ position: 'fixed', top: 0, left: 0, zIndex: -1, background: isDarkMode? 'black': 'transparent'}}>
-      <perspectiveCamera position={[0,0,5]}/>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[4, 4, 3]} />
-        <Cube spin={spin} />
-      </Canvas>
-
-    </div>
-
-  )
-}
-
-function App() {
-
-  return (
-    <div className='App'>
-      <Scene/>
-    </div>
-  );
-}
-
-export default App;
+export default Cube;
