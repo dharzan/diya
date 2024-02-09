@@ -23,10 +23,6 @@ export function Timeline({ isDarkMode }) {
 
 
 
-
-
-
-
 }
 
 export default About;
