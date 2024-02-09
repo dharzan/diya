@@ -18,6 +18,7 @@ export function Cube({ spin }) {
     const rotationSpeed = 0.005;
     
     meshRef.current.rotation.y += rotationSpeed;
+    
   });
 
 
