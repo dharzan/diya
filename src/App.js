@@ -110,7 +110,7 @@ function DropdownMenu() {
 
   // Styling for the dropdown button that aligns with your UI theme
   const buttonStyle = {
-    padding: "10px 35px",
+    padding: "10px 40px",
     fontSize: "16px",
     cursor: "pointer",
     border: "none",
