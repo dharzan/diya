@@ -7,20 +7,6 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import diya from "./diya.png";
 import diya2 from "./diya2.jpeg";
-import Timeline from "./Timeline";
-import { Link } from "react-router-dom";
-
-const sharedButtonStyle = {
-  padding: "10px 20px",
-  fontSize: "16px",
-  cursor: "pointer",
-  border: "none",
-  borderRadius: "20px",
-  backgroundColor: "#333",
-  color: "#FFF",
-  transition: "background-color 0.3s ease",
-  boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-};
 
 export function Cube({ spin }) {
   const meshRef = useRef();
@@ -117,7 +103,7 @@ function DropdownMenu() {
 
   // Styling for the dropdown button that aligns with your UI theme
   const buttonStyle = {
-    padding: "10px 40px",
+    padding: "10px 20px",
     fontSize: "16px",
     cursor: "pointer",
     border: "none",
