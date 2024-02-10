@@ -7,6 +7,18 @@ import "./App.css";
 import diya from "./diya.png";
 import diya2 from "./diya2.jpeg";
 
+const sharedButtonStyle = {
+  padding: "10px 20px",
+  fontSize: "16px",
+  cursor: "pointer",
+  border: "none",
+  borderRadius: "20px",
+  backgroundColor: "#333",
+  color: "#FFF",
+  transition: "background-color 0.3s ease",
+  boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+};
+
 export function Cube({ spin }) {
   const meshRef = useRef();
 
@@ -59,7 +71,7 @@ export function Home() {
       <div style={{ display: 'flex', justifyContent: 'space-between', padding: '20px' }}>
         <div style={{ textAlign: "end" }}>
           {/* Apply the buttonStyle to the toggle button */}
-          <button onClick={toggleDarkMode} style={buttonStyle}>
+          <button onClick={toggleDarkMode} style={sharedButtonStyle}>
             {isDarkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
@@ -91,12 +103,14 @@ export function Home() {
 function DropdownMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  
+
   // Toggles the visibility of the dropdown content
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   // Styling for the dropdown button that aligns with your UI theme
   const buttonStyle = {
-    padding: "10px 20px",
+    padding: "10px 35px",
     fontSize: "16px",
     cursor: "pointer",
     border: "none",
