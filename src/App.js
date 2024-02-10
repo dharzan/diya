@@ -2,10 +2,13 @@ import { Text } from "@react-three/drei";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useRef } from "react";
 import { TextureLoader } from "three";
-import About, { Timeline } from "./About";
+import About from "./About";
 import "./App.css";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import diya from "./diya.png";
 import diya2 from "./diya2.jpeg";
+import Timeline from "./Timeline";
+import { Link } from "react-router-dom";
 
 const sharedButtonStyle = {
   padding: "10px 20px",
@@ -46,7 +49,6 @@ export function Cube({ spin }) {
   );
 }
 
-
 export function Home() {
   const [isDarkMode, setIsDarkMode] = React.useState(true);
   const toggleDarkMode = () => {
@@ -68,10 +70,16 @@ export function Home() {
 
   return (
     <div style={{ height: "100vh" }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '20px' }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "20px",
+        }}
+      >
         <div style={{ textAlign: "end" }}>
           {/* Apply the buttonStyle to the toggle button */}
-          <button onClick={toggleDarkMode} style={sharedButtonStyle}>
+          <button onClick={toggleDarkMode} style={buttonStyle}>
             {isDarkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
@@ -94,16 +102,15 @@ export function Home() {
           <pointLight position={[3, 4, 2]} />
           <Cube></Cube>
         </Canvas>
+
+        
       </div>
     </div>
   );
 }
 
-
 function DropdownMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
-
-  
 
   // Toggles the visibility of the dropdown content
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -124,49 +131,99 @@ function DropdownMenu() {
 
   // Enhanced dropdown menu styling
   const menuStyle = {
-    position: 'absolute',
-    top: '100%',
+    position: "absolute",
+    top: "100%",
     right: 0,
-    backgroundColor: 'white',
-    boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
-    borderRadius: '5px',
-    overflow: 'hidden', // Ensures the border radius applies to child elements
-    zIndex: 1
+    backgroundColor: "white",
+    boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.2)",
+    borderRadius: "5px",
+    overflow: "hidden", // Ensures the border radius applies to child elements
+    zIndex: 1,
   };
 
   // Styling for each dropdown item
   const itemStyle = {
-    display: 'block',
-    padding: '10px 20px',
-    textDecoration: 'none',
-    color: '#333',
-    backgroundColor: 'white', // Default background
-    transition: 'background-color 0.3s, color 0.3s', // Smooth transition for hover
+    display: "block",
+    padding: "10px 20px",
+    textDecoration: "none",
+    color: "#333",
+    backgroundColor: "white", // Default background
+    transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
   };
 
   return (
-    <div style={{ position: 'absolute', top: 20, right: 20 }}>
+    <div style={{ position: "absolute", top: 20, right: 20 }}>
       <button onClick={toggleDropdown} style={buttonStyle}>
         Menu
       </button>
       {isOpen && (
         <div style={menuStyle}>
-          <a href="#about-me" style={itemStyle} onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f2f2f2'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}>About Me</a>
-          <a href="#timeline" style={itemStyle} onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f2f2f2'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}>Timeline</a>
-          <a href="#projects" style={itemStyle} onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f2f2f2'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}>Projects</a>
-          <a href="#contact-me" style={itemStyle} onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f2f2f2'} onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}>Contact Me</a>
+          <a
+            href="#about-me"
+            style={itemStyle}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#f2f2f2")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "white")
+            }
+          >
+            About Me
+          </a>
+          <a
+            href="#timeline"
+            style={itemStyle}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#f2f2f2")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "white")
+            }
+          >
+            Timeline
+          </a>
+          <a
+            href="#projects"
+            style={itemStyle}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#f2f2f2")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "white")
+            }
+          >
+            Projects
+          </a>
+          <a
+            href="#contact-me"
+            style={itemStyle}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#f2f2f2")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "white")
+            }
+          >
+            Contact Me
+          </a>
         </div>
       )}
     </div>
   );
 }
 
-
-
 export default function App({ isDarkMode }) {
   return (
     <div>
       <Home />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/timeline" element={<Timeline />} />
+        {/* Add other routes as needed */}
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
