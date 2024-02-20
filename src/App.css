@@ -52,6 +52,16 @@
   
  
  }
+
+ .about-timeline{
+  display: grid;
+  justify-content: center;
+  grid-template: auto;
+  grid-template-columns:(2 1fr);
+  gap: 20px; /* Space between each timeline item */
+  padding: 20px;
+
+ }
  .timeline-item {
   background-color: #181818; /* Background color for each item */
   border-radius: 5px; /* Optional: adds rounded corners */
@@ -127,10 +137,17 @@
 
  }
 
+ .about-timeline-item:hover{
+  background-color: grey;
+
+ }
+
  .about-content{
   display: grid;
   grid-template-rows: auto; /* Adjust based on content */
-  width: fit-content;
+  text-align: center;
+  
+  flex-wrap: wrap;
   
   gap: 10px; /* Space between grid rows */
  }

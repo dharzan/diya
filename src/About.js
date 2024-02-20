@@ -121,7 +121,7 @@ My career aspiration is to support healthcare professionals by innovating medica
   function AcademicSection() {
     return (
       <div className='timeline'>
-        <h2 style={styles.heading} paddingLeft={'20'}><FaUniversity style={styles.icon} />Technical Skills</h2>
+        <h2 style={styles.heading} paddingLeft={'20'}><FaUniversity style={styles.icon} />Skills</h2>
         {/* <p style={styles.paragraph}>
           Currently pursuing a B.S. in Bioengineering, I've engaged in coursework covering topics such as biomaterials, and so on. I'm also am skilled in Python and SolidWorks for biomedical applications.
         </p> */}
