@@ -41,3 +41,66 @@
     transform: rotate(360deg);
   }
 }
+
+.timeline {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  gap: 20px; /* Space between each timeline item */
+  padding: 20px;
+ 
+ }
+ .timeline-item {
+  display: flex;
+  flex: 1;
+  background-color: #181818; /* Background color for each item */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  display: flex; /* Use flexbox to align icon and content */
+  align-items: center; /* Align items vertically */
+  flex-direction: row;
+  gap: 20px; /* Space between icon and content */
+  padding: 20px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+ }
+ .tl-icon {
+  top: 0;
+  left: 0;
+  min-width: 50px; /* Ensure the icon container doesn't shrink */
+  height: 50px; /* Height of the icon container */
+  background-color:black; /* Icon background color */
+  color: white; /* Icon color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Makes the icon container circular */
+ }
+ .tl-duration, h5, p {
+  margin: 0; /* Reset margins */
+ }
+ .tl-duration {
+  display:flex;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-bottom: 10px; /* Space between duration and title */
+  background-color:#282c34;
+  border-radius: 5px;
+  align-items: center; /* Align items vertically */
+  flex-direction: row;
+  gap: 20px; /* Space between icon and content */
+  padding: 5px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+  width:fit-content;
+ }
+ h5 {
+  text-transform: uppercase;
+  margin-bottom: 10px; /* Space between title and description */
+ }
+ /* If you want the text content to be more structured,
+ you can wrap the duration, title, and description in a div and style it with display: grid */
+ .content {
+  display: grid;
+  grid-template-rows: auto; /* Adjust based on content */
+  gap: 10px; /* Space between grid rows */
+ }
+ /* Example of using a ::before pseudo-element for a timeline line */
+ 

@@ -1,18 +1,15 @@
-import React, { Suspense } from 'react';
-import { OrbitalVisualization } from './Timeline'; // Assuming a scientific visualization
-import { DropdownMenu } from './App'; // Navigation menu
-import { FaUniversity, FaLaptopCode, FaBrain, FaProjectDiagram } from 'react-icons/fa'; // Example icons
-import { Link } from 'react-scroll';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
+import React, { Suspense } from 'react';
+import { FaBrain, FaProjectDiagram, FaUniversity } from 'react-icons/fa'; // Example icons
+import { Link } from 'react-scroll';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader';
-import { OrbitControls } from '@react-three/drei';
+import { DropdownMenu, Star } from './App'; // Navigation menu
+import brain from "./brain3.stl";
+import browneye from "./brown_eye.glb";
+import lungs from "./lungs.glb";
 import skull from "./skull.glb";
-import lungs from  "./lungs.glb"
-import brain from "./brain3.stl"
-import browneye from "./brown_eye.glb"
-import motorhome from "./motor.glb"
-import { Star } from './App';
 
 
 
@@ -33,6 +30,7 @@ const styles = {
     margin: '20px 0',
     textAlign: 'center', // Centers the text within its container
     display: 'flex', // Use flexbox to align items inline
+    flex: 1,
     flexDirection: 'row', // Layout items in a row
     alignItems: 'center', // Center items vertically within the container
     justifyContent: 'center', // Center the content (icon and text) horizontally
@@ -40,11 +38,12 @@ const styles = {
   },
   paragraph: {
     display:'flex',
+    flex: 1,
     maxWidth: '800px',
     textAlign: 'justify',
     lineHeight: '1.6',
     fontSize: '1.2rem',
-    margin: '20px',
+    margin: '10px',
   },
   canvasContainer: {
     width: '100%',

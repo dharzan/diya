@@ -1,41 +1,21 @@
-import { Text } from "@react-three/drei";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import React, { useRef } from "react";
+import {
+  faBars,
+  faBrain,
+  faBriefcaseMedical,
+  faHeart,
+  faLungs,
+  faMicroscope,
+  faSuitcase
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useFrame, useLoader } from "@react-three/fiber";
+import React, { useMemo, useRef } from "react";
 import { TextureLoader } from "three";
-import About, { Timeline } from "./About";
 import "./App.css";
+import diya3 from "./Diya3.png";
+import { OrbitalVisualization, styles } from "./Timeline";
 import diya from "./diya.png";
 import diya2 from "./diya2.jpeg";
-import diya3 from "./Diya3.png";
-import useScrollPosition from "./useScrollPosition";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faUser,
-  faClock,
-  faProjectDiagram,
-  faEnvelope,
-  faBars,
-  faDragon,
-  faMoon,
-  faHeart,
-  faStethoscope,
-  faBrain,
-  faMicroscope,
-  faIdCardClip,
-  faBriefcaseMedical,
-  faLungs,
-  faFaceSmile,
-  faHeartCircleCheck,
-  faSuitcase,
-} from "@fortawesome/free-solid-svg-icons";
-import { useMemo } from "react";
-import { Vector3 } from "three";
-import { useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { OrbitalVisualization } from "./Timeline";
-import { styles } from "./Timeline";
 
 // export function Planets(){
 
@@ -96,12 +76,38 @@ export function Home() {
   const [is3D, setIs3D] = React.useState(false);
 
   const styless = {
+    heading: {
+      fontSize: '2.5rem',
+      margin: '20px 0',
+      textAlign: 'center', // Centers the text within its container
+      display: 'flex', // Use flexbox to align items inline
+      flexDirection: 'row', // Layout items in a row
+      alignItems: 'center', // Center items vertically within the container
+      justifyContent: 'center', // Center the content (icon and text) horizontally
+      gap: '10px', // Adds space between the icon and the text
+      
+    },
+    heading2: {
+      display: 'flex',
+      flex: 1,
+      fontSize: '1rem',
+      margin: '20px 0',
+      textAlign: 'center', // Centers the text within its container
+      flexDirection: 'row', // Layout items in a row
+      alignItems: 'center', // Center items vertically within the container
+      justifyContent: 'flex-start', // Center the content (icon and text) horizontally
+      gap: '10px', // Adds space between the icon and the text
+      fontWeight:'bold'
+    },
     app: {
       color: "white",
       backgroundColor: "black",
-      fontFamily: "Arial, sans-serif",
+      
       padding: "20px",
       minHeight: "100vh",
+      position:'relative',
+      
+  
     },
     gridContainer: {
       display: "grid",
@@ -123,6 +129,63 @@ export function Home() {
     },
     eventText: {
       marginTop: "10px",
+    },
+
+    timeline: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gripGap: '2rem',
+      paddingBottom: '3rem'
+
+
+    },
+
+    timelineItem: {
+      position: 'relative',
+      paddingLeft: '3rem',
+      borderLeft: '1px solid var (--color-grey-5)'
+
+    },
+
+    tlIcon: {
+      position: 'absolute',
+      left: '-27px',
+      top: '0',
+      backgroundColor: 'var(--color-secondary)',
+      width: '50px',
+      height: '50px',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    tlDuration:
+    {
+      padding: '0.2rem 0.6rem',
+      backgroundColor: 'var(--color-grey-5)',
+      borderRadius: '15px',
+      display: 'inline-block',
+      fontSize: '0.8rem',
+      textTransform: 'uppercase',
+      fontWeight: '500',
+    },
+
+    title: {
+      padding: '1rem 0',
+      textTransform: 'uppercase',
+      fontSize: '1.3rem',
+      fontWeight: '600',
+
+    },
+
+    subtitle: {
+      color: 'var(--color-grey-2)',
+      fontWeight: '500',
+      fontSize: '1.2rem',
+
+    },
+    detail: {
+      color: 'var(--color-grey-2)',
     },
   };
 
@@ -147,33 +210,7 @@ export function Home() {
     return new Array(600).fill().map((_, i) => <Star key={i} />);
   }, []);
 
-  // Example timeline events
-  const timelineEvents = [
-    {
-      year: " BMEs December 2023- Present",
-      events: [
-        "Schedule and coordinate all BMES fundraising events, activities, and regional/national BMES conferences",
-        "Organize one volunteering event each month",
-        "Conduct weekly membership meetings."
-      ],
-    },
-    {
-      year: "2022",
-      events: ["Launched Project Y"],
-    },
-    {
-      year: "December 2021- Present",
-      events: [
-        "Schedule and coordinate all BMES fundraising events, activities, and regional/national BMES conferences",
-        "Organize one volunteering event each month",
-      ],
-    },
-    {
-      year: "2020",
-      events: ["Another significant event", "More achievements"],
-    },
-    // Add more events as needed
-  ];
+
 
   return (
     <div>
@@ -182,15 +219,9 @@ export function Home() {
           <FontAwesomeIcon icon={faSuitcase} />
         </button>
 
-        {is3D ? (
-          <div style={styles.app}>
-            <div style={styles.canvasContainer}>
-              <OrbitalVisualization />
-            </div>
-          </div>
-        ) : (
-          <h1 style={{ textAlign: "center" }}>Timeline</h1>
-        )}
+       
+          <h1 style={styless.heading}>Timeline</h1>
+        
         {is3D ? (
           <div style={styles.app}>
             <div style={styles.canvasContainer}>
@@ -199,31 +230,102 @@ export function Home() {
           </div>
         ) : (
           // Updated component rendering to support multiple events per year
-          <div style={styless.gridContainer}>
-            {timelineEvents.map((item, index) => (
-              <div key={index} style={styless.gridItem}>
-                <div style={styles.eventHeader}>
-                  <FontAwesomeIcon icon={faSuitcase} style={styless.icon} />
-                  <span>{item.year}</span>
+          <div className="timeline">
+                <div className="timeline-item">
+                    <div className="tl-icon">
+                        <FontAwesomeIcon icon={faBriefcaseMedical}/>
+                    </div>
+                    <div className="content">
+                      <p className="tl-duration">December 2023 - Present</p>
+                      <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES), UToledo</h5>
+                      <p>
+                          • Coordinate and oversee all fundraising initiatives, activities, and regional/national conferences for the Biomedical Engineering Society (BMES), 
+                            ensuring strategic alignment with organizational goals and member engagement.
+                      </p>
+                      <p>
+                          • Organize one volunteering event each month.
+
+                      </p>
+                      <p>
+                          •  Conduct weekly membership meetings.
+
+
+                      </p>
+                   
+                    </div>
                 </div>
-                {item.events.map((event, idx) => (
-                  <div key={idx} style={styless.eventText}>
-                    {event.includes("\n\n") ? (
-                      <ul>
-                        {event.split("\n\n").map((point, pointIdx) => (
-                          <li key={pointIdx} style={styless.listItem}>
-                            {point.trim()}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p>{event}</p>
-                    )}
-                  </div>
-                ))}
+                <div className="timeline-item">
+                    <div className="tl-icon">
+                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
+                    </div>
+                    <div className="content">
+                    <p className="tl-duration">January 2024 - Present</p>
+                    <h5 style={styless.heading2}>Resident Assistant - Office of Residence Life, UToledo </h5>
+                    <p>
+                        • Schedule and coordinate all BMES fundraising events, activities and regional/national 
+BMES conferences
+                    </p>
+                    <p>
+                        • Organize one volunteering event each month.
+
+                    </p>
+                    <p>
+                        •  Conduct weekly membership meetings.
+
+
+                    </p>
+                   
+                    </div>
+                </div>
+                <div className="timeline-item">
+                    <div className="tl-icon">
+                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
+                    </div>
+                    <div className="content">
+                    <p className="tl-duration">January 2024 - Present</p>
+                    <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES) <span> - UToledo</span></h5>
+                    <p>
+                        • Schedule and coordinate all BMES fundraising events, activities and regional/national
+BMES conferences
+
+                    </p>
+                    <p>
+                        • Organize one volunteering event each month.
+
+                    </p>
+                    <p>
+                        •  Conduct weekly membership meetings.
+
+
+                    </p>
+                   
+                    </div>
+                </div>
+                <div className="timeline-item">
+                    <div className="tl-icon">
+                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
+                    </div>
+                    <div className="content">
+                    <p className="tl-duration">January 2024 - Present</p>
+                    <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES) <span> - UToledo</span></h5>
+                    <p>
+                        • Schedule and coordinate all BMES fundraising events, activities and regional/national 
+BMES conferences
+
+                    </p>
+                    <p>
+                        • Organize one volunteering event each month.
+
+                    </p>
+                    <p>
+                        •  Conduct weekly membership meetings.
+
+
+                    </p>
+                   
+                    </div>
+                </div>
               </div>
-            ))}
-          </div>
         )}
 
         <DropdownMenu />
