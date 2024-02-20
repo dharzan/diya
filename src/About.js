@@ -104,12 +104,8 @@ function IntroSection() {
         </p> */}
         <p p style={styles.paragraph}>
 
-        I am a junior studying Bioengineering with a concentration in pre-med at the University of Toledo. I
-love biology, and design, and am curious to learn more about the intersection of life sciences with
-technology. My passion is to support doctors by creating simpler, and more effective medical
-devices, implants, and procedures to better help patients in need. Outside academics, I am a
-national badminton and a black-belt karate player. I also enjoy teaching yoga, reading books, and
-getting involved on campus during my free time.
+        I am currently a junior at the University of Toledo, pursuing a degree in Bioengineering with a concentration in pre-medical studies. My academic focus revolves around the intersection of biology and design, with a particular interest in exploring how technology can enhance advancements in the life sciences.
+My career aspiration is to support healthcare professionals by innovating medical devices, implants, and procedures to improve patient outcomes. Outside of my studies, I am actively involved in national-level badminton and hold a black belt in karate. Additionally, I enjoy sharing my passion for yoga through teaching, dedicating time to reading, and participating in campus activities during my free time.
 
            
 

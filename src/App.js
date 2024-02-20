@@ -4,8 +4,7 @@ import {
   faBriefcaseMedical,
   faHeart,
   faLungs,
-  faMicroscope,
-  faSuitcase
+  faMicroscope
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFrame, useLoader } from "@react-three/fiber";
@@ -77,37 +76,35 @@ export function Home() {
 
   const styless = {
     heading: {
-      fontSize: '2.5rem',
-      margin: '20px 0',
-      textAlign: 'center', // Centers the text within its container
-      display: 'flex', // Use flexbox to align items inline
-      flexDirection: 'row', // Layout items in a row
-      alignItems: 'center', // Center items vertically within the container
-      justifyContent: 'center', // Center the content (icon and text) horizontally
-      gap: '10px', // Adds space between the icon and the text
-      
-    },
-    heading2: {
       display: 'flex',
       flex: 1,
-      fontSize: '1rem',
-      margin: '20px 0',
-      textAlign: 'center', // Centers the text within its container
-      flexDirection: 'row', // Layout items in a row
-      alignItems: 'center', // Center items vertically within the container
-      justifyContent: 'flex-start', // Center the content (icon and text) horizontally
-      gap: '10px', // Adds space between the icon and the text
-      fontWeight:'bold'
+      fontSize: "2.5rem",
+      margin: "20px 0",
+      textAlign: "center", // Centers the text within its container
+      
+      flexDirection: "row", // Layout items in a row
+      alignItems: "center", // Center items vertically within the container
+      justifyContent: "center", // Center the content (icon and text) horizontally
+      gap: "10px", // Adds space between the icon and the text
+    },
+    heading2: {
+      display: "flex",
+      flex: 1,
+      fontSize: "1rem",
+      margin: "20px 0",
+      textAlign: "center", // Centers the text within its container
+      flexDirection: "row", // Layout items in a row
+      alignItems: "center", // Center items vertically within the container
+      justifyContent: "flex-start", // Center the content (icon and text) horizontally
+      gap: "10px", // Adds space between the icon and the text
+      fontWeight: "bold",
     },
     app: {
       color: "white",
       backgroundColor: "black",
-      
+
       padding: "20px",
       minHeight: "100vh",
-      position:'relative',
-      
-  
     },
     gridContainer: {
       display: "grid",
@@ -132,60 +129,54 @@ export function Home() {
     },
 
     timeline: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gripGap: '2rem',
-      paddingBottom: '3rem'
-
-
+      display: "grid",
+      gridTemplateColumns: "repeat(2, 1fr)",
+      gripGap: "2rem",
+      paddingBottom: "3rem",
     },
 
     timelineItem: {
-      position: 'relative',
-      paddingLeft: '3rem',
-      borderLeft: '1px solid var (--color-grey-5)'
-
+      position: "relative",
+      paddingLeft: "3rem",
+      borderLeft: "1px solid var (--color-grey-5)",
     },
 
     tlIcon: {
-      position: 'absolute',
-      left: '-27px',
-      top: '0',
-      backgroundColor: 'var(--color-secondary)',
-      width: '50px',
-      height: '50px',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      position: "absolute",
+      left: "-27px",
+      top: "0",
+      backgroundColor: "var(--color-secondary)",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     },
-    tlDuration:
-    {
-      padding: '0.2rem 0.6rem',
-      backgroundColor: 'var(--color-grey-5)',
-      borderRadius: '15px',
-      display: 'inline-block',
-      fontSize: '0.8rem',
-      textTransform: 'uppercase',
-      fontWeight: '500',
+    tlDuration: {
+      padding: "0.2rem 0.6rem",
+      backgroundColor: "var(--color-grey-5)",
+      borderRadius: "15px",
+      display: "inline-block",
+      fontSize: "0.8rem",
+      textTransform: "uppercase",
+      fontWeight: "500",
     },
 
     title: {
-      padding: '1rem 0',
-      textTransform: 'uppercase',
-      fontSize: '1.3rem',
-      fontWeight: '600',
-
+      padding: "1rem 0",
+      textTransform: "uppercase",
+      fontSize: "1.3rem",
+      fontWeight: "600",
     },
 
     subtitle: {
-      color: 'var(--color-grey-2)',
-      fontWeight: '500',
-      fontSize: '1.2rem',
-
+      color: "var(--color-grey-2)",
+      fontWeight: "500",
+      fontSize: "1.2rem",
     },
     detail: {
-      color: 'var(--color-grey-2)',
+      color: "var(--color-grey-2)",
     },
   };
 
@@ -210,122 +201,118 @@ export function Home() {
     return new Array(600).fill().map((_, i) => <Star key={i} />);
   }, []);
 
-
-
   return (
     <div>
       <div style={styless.app}>
         <button onClick={handle3D} style={buttonStyle}>
-          <FontAwesomeIcon icon={faSuitcase} />
+          <FontAwesomeIcon icon={faBriefcaseMedical} />
         </button>
 
-       
-          <h1 style={styless.heading}>Timeline</h1>
-        
+        <h1 style={styless.heading}>{is3D? "": "Timeline"}</h1>
+
         {is3D ? (
           <div style={styles.app}>
             <div style={styles.canvasContainer}>
               <OrbitalVisualization />
+              {stars}
             </div>
           </div>
         ) : (
           // Updated component rendering to support multiple events per year
           <div className="timeline">
-                <div className="timeline-item">
-                    <div className="tl-icon">
-                        <FontAwesomeIcon icon={faBriefcaseMedical}/>
-                    </div>
-                    <div className="content">
-                      <p className="tl-duration">December 2023 - Present</p>
-                      <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES), UToledo</h5>
-                      <p>
-                          • Coordinate and oversee all fundraising initiatives, activities, and regional/national conferences for the Biomedical Engineering Society (BMES), 
-                            ensuring strategic alignment with organizational goals and member engagement.
-                      </p>
-                      <p>
-                          • Organize one volunteering event each month.
-
-                      </p>
-                      <p>
-                          •  Conduct weekly membership meetings.
-
-
-                      </p>
-                   
-                    </div>
-                </div>
-                <div className="timeline-item">
-                    <div className="tl-icon">
-                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
-                    </div>
-                    <div className="content">
-                    <p className="tl-duration">January 2024 - Present</p>
-                    <h5 style={styless.heading2}>Resident Assistant - Office of Residence Life, UToledo </h5>
-                    <p>
-                        • Schedule and coordinate all BMES fundraising events, activities and regional/national 
-BMES conferences
-                    </p>
-                    <p>
-                        • Organize one volunteering event each month.
-
-                    </p>
-                    <p>
-                        •  Conduct weekly membership meetings.
-
-
-                    </p>
-                   
-                    </div>
-                </div>
-                <div className="timeline-item">
-                    <div className="tl-icon">
-                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
-                    </div>
-                    <div className="content">
-                    <p className="tl-duration">January 2024 - Present</p>
-                    <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES) <span> - UToledo</span></h5>
-                    <p>
-                        • Schedule and coordinate all BMES fundraising events, activities and regional/national
-BMES conferences
-
-                    </p>
-                    <p>
-                        • Organize one volunteering event each month.
-
-                    </p>
-                    <p>
-                        •  Conduct weekly membership meetings.
-
-
-                    </p>
-                   
-                    </div>
-                </div>
-                <div className="timeline-item">
-                    <div className="tl-icon">
-                        <i className="fas fa-briefcase"><FontAwesomeIcon icon={faBriefcaseMedical}/></i>
-                    </div>
-                    <div className="content">
-                    <p className="tl-duration">January 2024 - Present</p>
-                    <h5 style={styless.heading2}>Fundraising and Service Chair, Biomedical Engineering Society (BMES) <span> - UToledo</span></h5>
-                    <p>
-                        • Schedule and coordinate all BMES fundraising events, activities and regional/national 
-BMES conferences
-
-                    </p>
-                    <p>
-                        • Organize one volunteering event each month.
-
-                    </p>
-                    <p>
-                        •  Conduct weekly membership meetings.
-
-
-                    </p>
-                   
-                    </div>
-                </div>
+            <div className="timeline-item" onClick={handle3D}>
+              <div className="tl-icon">
+                <FontAwesomeIcon icon={faBriefcaseMedical} />
               </div>
+              <div className="content">
+                <p className="tl-duration">December 2023 - Present</p>
+                <h5 style={styless.heading2}>
+                  Fundraising and Service Chair, Biomedical Engineering Society
+                  (BMES), UToledo
+                </h5>
+                <p>
+                  • Coordinate and oversee all fundraising initiatives,
+                  activities, and regional/national conferences for the
+                  Biomedical Engineering Society (BMES), ensuring strategic
+                  alignment with organizational goals and member engagement
+                </p>
+                <p>
+                  • Lead the planning and execution of monthly volunteering
+                  events, fostering community service and enhancing the societal
+                  impact of the bioengineering field
+                </p>
+                <p>
+                  • Facilitate weekly membership meetings to discuss
+                  advancements, address member concerns, and foster a
+                  collaborative environment within the bioengineering community
+                </p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="tl-icon">
+                <i className="fas fa-briefcase">
+                  <FontAwesomeIcon icon={faBriefcaseMedical} />
+                </i>
+              </div>
+              <div className="content">
+                <p className="tl-duration">August 2023 - Present</p>
+                <h5 style={styless.heading2}>
+                  Resident Assistant - Office of Residence Life, UToledo{" "}
+                </h5>
+                <p>
+                  • Cultivate student relationships, fostering collaboration with fellow RAs to strategize and implement engaging events aimed at enhancing resident involvement
+                </p>
+                <p>
+                  • Proactively identify and address student concerns, meticulously documenting incidents and health-related matters while adeptly resolving conflicts and conducting routine duty rounds
+                </p>
+                <p>
+                  • Curate visually appealing bulletin boards and craft door decorations to enhance the ambiance of resident floors, ensuring a warm and inviting environment for incoming students
+                </p>
+                <p>
+                  • Decorate bulletin boards and make door decs to make the
+                  floor feel more welcoming to new students
+                </p>
+                •  Manage mail distribution via Starrez, efficiently assigning mail to respective mailboxes, and administer essential supplies including keys and locks from the building’s front desk to residents
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="tl-icon">
+                <i className="fas fa-briefcase">
+                  <FontAwesomeIcon icon={faBriefcaseMedical} />
+                </i>
+              </div>
+              <div className="content">
+                <p className="tl-duration">May 2023 - Present</p>
+                <h5 style={styless.heading2}>
+                 Certified Yoga Instructor, UToledo
+                </h5>
+                <p>
+                  • Accredited YogaFit instructor specializing in Vinyasa, Hatha, Power Yoga, and Yoga Flow methodologies
+                </p>
+                <p>• Conduct thorough assessments of participants to discern individual needs and tailor training regimens accordingly</p>
+                <p>• Inspire and empower participants to pursue and surpass their fitness objectives by crafting and adapting personalized routines designed to optimize performance and progress</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="tl-icon">
+                <i className="fas fa-briefcase">
+                  <FontAwesomeIcon icon={faBriefcaseMedical} />
+                </i>
+              </div>
+              <div className="content">
+                <p className="tl-duration">May 2022 - December 2022
+</p>
+                <h5 style={styless.heading2}>
+                Undergraduate Research Assistant- College of Life Science, UToledo
+                </h5>
+                <p>
+                  • Conducted research in the field of Regio Degenerative Medicines alongside a doctorate candidate
+                </p>
+                <p>• Streamlined standard reactions and fundamental synthesis of compounds utilizing sophisticated organic equipment including NMR and Microvolume spectrometers, TLC Chambers, chromatographic systems, organic synthesizers, and rotary evaporators</p>
+                <p>• Developed comprehensive lab manuals with supporting information and contributed to substrate scope studies, as well as meticulously proofreading research data</p>
+              </div>
+            </div>
+          </div>
         )}
 
         <DropdownMenu />
