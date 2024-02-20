@@ -44,9 +44,12 @@
 
 .timeline {
   display: grid;
-  grid-template-columns:(1fr 1fr);
+  justify-content: center;
+  grid-template: auto;
+  grid-template-columns:(2 1fr);
   gap: 20px; /* Space between each timeline item */
   padding: 20px;
+  
  
  }
  .timeline-item {
@@ -103,7 +106,64 @@
  .content {
   display: grid;
   grid-template-rows: auto; /* Adjust based on content */
+  
   gap: 10px; /* Space between grid rows */
  }
+ .about-timeline-item{
+
+  background-color: #181818; /* Background color for each item */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  display: flex; /* Use flexbox to align icon and content */
+  align-items: center; /* Align items vertically */
+  justify-content: center;
+  align-self: center;
+  
+
+ 
+  gap: 20px; /* Space between icon and content */
+  padding: 20px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+  cursor: pointer;
+
+ }
+
+ .about-content{
+  display: grid;
+  grid-template-rows: auto; /* Adjust based on content */
+  width: fit-content;
+  
+  gap: 10px; /* Space between grid rows */
+ }
+ 
  /* Example of using a ::before pseudo-element for a timeline line */
+
+ @media screen and (max-width:700px){
+  .container{
+      padding: 7rem 3rem;
+  }
+  .about-stats .progress-bars{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  .about-container .right-about{
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .timeline{
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      align-items: center;
+      justify-self:center ;
+  }
+  .main-title{
+      h2{
+          font-size: 3rem;
+          span{
+              font-size: 3rem;
+          }
+          .bg-text{
+              font-size: 4rem;
+          }
+      }
+  }
+}
  

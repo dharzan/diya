@@ -221,9 +221,9 @@ export function Home() {
           // Updated component rendering to support multiple events per year
           <div className="timeline">
             <div className="timeline-item" onClick={handle3D}>
-              <div className="tl-icon">
+              {/* <div className="tl-icon">
                 <FontAwesomeIcon icon={faBriefcaseMedical} />
-              </div>
+              </div> */}
               <div className="content">
                 <p className="tl-duration">December 2023 - Present</p>
                 <h5 style={styless.heading2}>
@@ -249,11 +249,11 @@ export function Home() {
               </div>
             </div>
             <div className="timeline-item">
-              <div className="tl-icon">
+              {/* <div className="tl-icon">
                 <i className="fas fa-briefcase">
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
-              </div>
+              </div> */}
               <div className="content">
                 <p className="tl-duration">August 2023 - Present</p>
                 <h5 style={styless.heading2}>
@@ -276,11 +276,11 @@ export function Home() {
               </div>
             </div>
             <div className="timeline-item">
-              <div className="tl-icon">
+              {/* <div className="tl-icon">
                 <i className="fas fa-briefcase">
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
-              </div>
+              </div> */}
               <div className="content">
                 <p className="tl-duration">May 2023 - Present</p>
                 <h5 style={styless.heading2}>
@@ -294,11 +294,11 @@ export function Home() {
               </div>
             </div>
             <div className="timeline-item">
-              <div className="tl-icon">
+              {/* <div className="tl-icon">
                 <i className="fas fa-briefcase">
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
-              </div>
+              </div> */}
               <div className="content">
                 <p className="tl-duration">May 2022 - December 2022
 </p>

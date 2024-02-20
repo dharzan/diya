@@ -97,12 +97,14 @@ export const Sidebar = () => {
 // Introduction Section with an icon
 function IntroSection() {
     return (
-      <>
+      <div className='timeline'>
+
         <h1 style={styles.heading}><FaBrain style={styles.icon} />About Me</h1>
         {/* <p style={styles.paragraph}>
           I'm a junior Bioengineering student at the University Of Toledo, passionate about applying engineering principles to solve biological and medical problems. My journey in bioengineering is driven by curiosity and a deep desire to make a meaningful impact in healthcare.
         </p> */}
-        <p p style={styles.paragraph}>
+        <div className='about-timeline-item'>
+        <p className='about-content'>
 
         I am currently a junior at the University of Toledo, pursuing a degree in Bioengineering with a concentration in pre-medical studies. My academic focus revolves around the intersection of biology and design, with a particular interest in exploring how technology can enhance advancements in the life sciences.
 My career aspiration is to support healthcare professionals by innovating medical devices, implants, and procedures to improve patient outcomes. Outside of my studies, I am actively involved in national-level badminton and hold a black belt in karate. Additionally, I enjoy sharing my passion for yoga through teaching, dedicating time to reading, and participating in campus activities during my free time.
@@ -110,23 +112,26 @@ My career aspiration is to support healthcare professionals by innovating medica
            
 
         </p>
-      </>
+        </div>
+      </div>
     );
   }
   
   // Academic and Skills Section with an icon
   function AcademicSection() {
     return (
-      <div>
+      <div className='timeline'>
         <h2 style={styles.heading} paddingLeft={'20'}><FaUniversity style={styles.icon} />Technical Skills</h2>
         {/* <p style={styles.paragraph}>
           Currently pursuing a B.S. in Bioengineering, I've engaged in coursework covering topics such as biomaterials, and so on. I'm also am skilled in Python and SolidWorks for biomedical applications.
         </p> */}
+        <div className='about-timeline-item'>
 
-        <p style={styles.paragraph}> 
+        <p className='content'> 
         SolidWorks, Python, Biopython, MySQL, MATLAB, Tkinter, Minitab, Intergrated Cargo System (ICS), Microsoft Office
         
         </p>
+        </div>
         
       </div>
     );
