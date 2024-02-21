@@ -31,7 +31,7 @@ export default function Projects({isDarkMode}){
         <body >
 
             <div style={styles.app}>
-            <h1 >Projects</h1>
+            <h1 style={{textAlign:'center'}}>Projects</h1>
             <div className="timeline">
             <button style={buttonStyle} onClick={turnOn}>
             <FontAwesomeIcon icon={faMicroscope} />

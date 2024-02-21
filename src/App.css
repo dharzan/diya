@@ -179,6 +179,30 @@
   
   gap: 10px; /* Space between grid rows */
  }
+
+ .contact-div{
+  display:grid;
+  grid-template-columns: 40px;
+  background: #61dafb;
+  max-width: 60px;
+ 
+   
+ 
+ 
+ 
+  
+
+  
+ }
+
+ .contact-div > div{
+  
+  
+
+ }
+
+
+ 
  
  /* Example of using a ::before pseudo-element for a timeline line */
 

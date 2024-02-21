@@ -101,7 +101,12 @@ function Timeline() {
     <div style={styles.app}>
       
       <DropdownMenu />
-      <h1>Diya Dhyani</h1>
+      <div style={{ textAlign:"center"}}>
+
+      <h1 >Diya Dhyani</h1>
+        
+      </div>
+      
       <div style={styles.canvasContainer}>
         <TimelineVisualization setSelectedEvent={setSelectedEventId} selectedEventId={selectedEventId} />
       </div>
@@ -124,11 +129,11 @@ export const styles = {
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
     backgroundColor: 'black', // Ensure space theme is always dark
     color: 'white',
     overflow: 'hidden',
+    width:'100%'
   },
   canvasContainer: {
     width: '100%',
