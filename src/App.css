@@ -49,6 +49,10 @@
   grid-template-columns:(2 1fr);
   gap: 20px; /* Space between each timeline item */
   padding: 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  align-items: start;
+  justify-items: center;
   
  
  }
@@ -67,6 +71,8 @@
   border-radius: 5px; /* Optional: adds rounded corners */
   display: flex; /* Use flexbox to align icon and content */
   align-items: center; /* Align items vertically */
+  margin: 0 auto;
+  width: 80%;
  
   gap: 20px; /* Space between icon and content */
   padding: 20px; /* Padding inside each timeline item */
@@ -79,22 +85,23 @@
 
  }
  .tl-icon {
-  top: 0;
+  position: relative;
   left: 0;
-  min-width: 50px; /* Ensure the icon container doesn't shrink */
-  height: 50px; /* Height of the icon container */
-  background-color:black; /* Icon background color */
-  color: white; /* Icon color */
+  top: 0;
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
+  align-self: start;
   justify-content: center;
-  align-items: center;
-  border-radius: 50%; /* Makes the icon container circular */
  }
  .tl-duration, h5, p {
   margin: 0; /* Reset margins */
  }
  .tl-duration {
-  display:flex;
+  display:grid;
+  text-align: center;
   font-weight: bold;
   color: whitesmoke;
   margin-bottom: 10px; /* Space between duration and title */
@@ -106,6 +113,7 @@
   padding: 5px; /* Padding inside each timeline item */
   position: relative; /* For absolute positioning of the icon */
   width:fit-content;
+  margin: 0 auto;
  }
  h5 {
   text-transform: uppercase;
@@ -114,8 +122,8 @@
  /* If you want the text content to be more structured,
  you can wrap the duration, title, and description in a div and style it with display: grid */
  .content {
-  display: grid;
-  grid-template-rows: auto; /* Adjust based on content */
+  display: flex;
+  flex-direction: column;/* Adjust based on content */
   
   gap: 10px; /* Space between grid rows */
  }
@@ -145,7 +153,7 @@
  .about-content{
   display: grid;
   grid-template-rows: auto; /* Adjust based on content */
-  text-align: center;
+  text-align:start;
   
   flex-wrap: wrap;
   
