@@ -49,7 +49,7 @@
   grid-template-columns:(2 1fr);
   gap: 20px; /* Space between each timeline item */
   padding: 20px;
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   align-items: start;
   justify-items: center;
@@ -72,7 +72,7 @@
   display: flex; /* Use flexbox to align icon and content */
   align-items: center; /* Align items vertically */
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
  
   gap: 20px; /* Space between icon and content */
   padding: 20px; /* Padding inside each timeline item */
