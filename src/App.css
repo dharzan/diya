@@ -144,13 +144,23 @@
   width: 90%;
   
 
- 
+
   gap: 20px; /* Space between icon and content */
   padding: 20px; /* Padding inside each timeline item */
   position: relative; /* For absolute positioning of the icon */
   cursor: pointer;
 
  }
+ .polka-dot {
+  width: 240px;
+  height: 240px;
+  background-color: #000;
+  background-image: radial-gradient(#fff 10%, transparent 11%),
+    radial-gradient(#fff 10%, transparent 11%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-repeat: repeat;
+}
 
  .about-timeline-item:hover{
   background-color: grey;

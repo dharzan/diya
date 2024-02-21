@@ -290,15 +290,17 @@ My career aspiration is to support healthcare professionals by innovating medica
   export function AboutMe() {
     return (
       <div style={styles.app}>
+        
+        <div style={{width: '100%',height: '30%'}}>
+          <Lungs/>
+        </div>
         <DropdownMenu />
         <IntroSection />
         <div style={styles.sectionDivider}></div>
 
         
         <AcademicSection />
-        <div style={styles.canvasContainer}>
-          <Lungs/>
-        </div>
+        
         
         
       </div>

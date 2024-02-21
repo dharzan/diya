@@ -7,7 +7,8 @@ import {
   faMicroscope
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import { TextureLoader } from "three";
 import "./App.css";
@@ -103,9 +104,13 @@ export function Home() {
     app: {
       color: "white",
       backgroundColor: "black",
-
       padding: "20px",
       minHeight: "100vh",
+      position:'relative',
+      flexDirection: 'column',
+     
+      
+      overflow: 'hidden',
     },
     gridContainer: {
       display: "grid",
@@ -204,10 +209,19 @@ export function Home() {
 
   return (
     <div>
+    
       <div style={styless.app}>
-        <button onClick={handle3D} style={buttonStyle}>
+      <button onClick={handle3D} style={buttonStyle}>
           <FontAwesomeIcon icon={faBriefcaseMedical} />
         </button>
+      <Canvas position={[0,0,-500]}>
+        <OrbitControls/>
+        {stars}
+      </Canvas>
+
+      
+      
+        
 
         <h1 style={styless.heading}>{is3D? "": "Timeline"}</h1>
 
