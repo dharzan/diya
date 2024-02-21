@@ -1,6 +1,6 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
-import React, { Suspense } from 'react';
+import React, { Suspense, useMemo } from 'react';
 import { FaBrain, FaProjectDiagram, FaUniversity } from 'react-icons/fa'; // Example icons
 import { Link } from 'react-scroll';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -288,18 +288,27 @@ My career aspiration is to support healthcare professionals by innovating medica
   
   // Use Section Dividers for visual separation
   export function AboutMe() {
+    const stars = useMemo(() => {
+      return new Array(600).fill().map((_, i) => <Star key={i} />);
+    }, []);
+    
     return (
       <div style={styles.app}>
         
-        <div style={{width: '100%',height: '30%'}}>
-          <Lungs/>
-        </div>
+        <Canvas position={[0,0,-500]}>
+        <OrbitControls/>
+        {stars}
+
+        </Canvas>
         <DropdownMenu />
         <IntroSection />
         <div style={styles.sectionDivider}></div>
 
         
         <AcademicSection />
+        <div style={styles.canvasContainer}>
+          <Lungs/>
+        </div>
         
         
         

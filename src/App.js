@@ -227,8 +227,8 @@ export function Home() {
 
         {is3D ? (
           <div style={styles.app}>
-            <div style={styles.canvasContainer}>
-              <OrbitalVisualization />
+            <div style={{width: '100%', height:'90%'}}>
+              <OrbitalVisualization position={[0,20,0]} />
               {stars}
             </div>
           </div>
