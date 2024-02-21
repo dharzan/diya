@@ -122,8 +122,14 @@
  /* If you want the text content to be more structured,
  you can wrap the duration, title, and description in a div and style it with display: grid */
  .content {
-  display: flex;
-  flex-direction: column;/* Adjust based on content */
+  display: grid;
+  grid-template-rows: auto; /* Adjust based on content */
+  text-align:center;
+  font-size: 20px;
+  
+  
+  flex-wrap: wrap;
+  width:fit-content;
   
   gap: 10px; /* Space between grid rows */
  }
@@ -135,6 +141,7 @@
   align-items: center; /* Align items vertically */
   justify-content: center;
   align-self: center;
+  width: fit-content;
   
 
  
@@ -154,8 +161,11 @@
   display: grid;
   grid-template-rows: auto; /* Adjust based on content */
   text-align:start;
+  font-size: 20px;
+  
   
   flex-wrap: wrap;
+  width:fit-content;
   
   gap: 10px; /* Space between grid rows */
  }

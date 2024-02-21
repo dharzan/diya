@@ -90,14 +90,15 @@ export function Home() {
     heading2: {
       display: "flex",
       flex: 1,
-      fontSize: "1rem",
+      fontSize: "20px",
       margin: "20px 0",
       textAlign: "center", // Centers the text within its container
       flexDirection: "row", // Layout items in a row
-      alignItems: "center", // Center items vertically within the container
-      justifyContent: "flex-start", // Center the content (icon and text) horizontally
+      alignSelf: "center", // Center items vertically within the container
+      justifyContent: "center", // Center the content (icon and text) horizontally
       gap: "10px", // Adds space between the icon and the text
       fontWeight: "bold",
+      
     },
     app: {
       color: "white",
@@ -224,7 +225,7 @@ export function Home() {
               {/* <div className="tl-icon">
                 <FontAwesomeIcon icon={faBriefcaseMedical} />
               </div> */}
-              <div className="content">
+              <div className="about-content">
                 <p className="tl-duration">December 2023 - Present</p>
                 <h5 style={styless.heading2}>
                   Fundraising and Service Chair, Biomedical Engineering Society
@@ -254,7 +255,7 @@ export function Home() {
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
               </div> */}
-              <div className="content">
+              <div className="about-content">
                 <p className="tl-duration">August 2023 - Present</p>
                 <h5 style={styless.heading2}>
                   Resident Assistant - Office of Residence Life, UToledo{" "}
@@ -281,7 +282,7 @@ export function Home() {
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
               </div> */}
-              <div className="content">
+              <div className="about-content">
                 <p className="tl-duration">May 2023 - Present</p>
                 <h5 style={styless.heading2}>
                  Certified Yoga Instructor, UToledo
@@ -299,7 +300,7 @@ export function Home() {
                   <FontAwesomeIcon icon={faBriefcaseMedical} />
                 </i>
               </div> */}
-              <div className="content">
+              <div className="about-content">
                 <p className="tl-duration">May 2022 - December 2022
 </p>
                 <h5 style={styless.heading2}>

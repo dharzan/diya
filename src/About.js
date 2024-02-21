@@ -107,7 +107,7 @@ function IntroSection() {
         <p className='about-content'>
 
         I am currently a junior at the University of Toledo, pursuing a degree in Bioengineering with a concentration in pre-medical studies. My academic focus revolves around the intersection of biology and design, with a particular interest in exploring how technology can enhance advancements in the life sciences.
-My career aspiration is to support healthcare professionals by innovating medical devices, implants, and procedures to improve patient outcomes. Outside of my studies, I am actively involved in national-level badminton and hold a black belt in karate. Additionally, I enjoy sharing my passion for yoga through teaching, dedicating time to reading, and participating in campus activities during my free time.
+My career aspiration is to support healthcare professionals by innovating medical devices, implants, and procedures to improve patient outcomes. Outside of my studies, I have been actively involved in national-level badminton and hold a black belt in karate. Additionally, I enjoy sharing my passion for yoga through teaching, dedicating time to reading, and participating in campus activities during my free time.
 
            
 
@@ -127,7 +127,7 @@ My career aspiration is to support healthcare professionals by innovating medica
         </p> */}
         <div className='about-timeline-item'>
 
-        <p className='content'> 
+        <p className='about-content'> 
         SolidWorks, Python, Biopython, MySQL, MATLAB, Tkinter, Minitab, Intergrated Cargo System (ICS), Microsoft Office
         
         </p>
