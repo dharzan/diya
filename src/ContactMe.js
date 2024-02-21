@@ -24,16 +24,14 @@ function ContactMe() {
     marginBottom: "10px", // Added to separate the button from the dropdown content visually
     top: "0",
     left: "0",
-    display: 'grid',
-    justifyContent:'center',
+    display: "grid",
+    justifyContent: "center",
     margin: "0 auto",
-    width:'5%'
-   
+    width: "3.5%",
   };
 
-  return (
-    <div>
-      
+  function Contact() {
+    return (
       <div style={styles.app}>
         <h1 style={{ textAlign: "center" }}>Contact Me</h1>
         <button style={buttonStyle} onClick={turnOn}>
@@ -49,6 +47,24 @@ function ContactMe() {
           <DropdownMenu />
         </div>
       </div>
+    );
+  }
+
+  function NewContact() {
+    return (
+      <div
+        style={{background: "grey" }}>
+        <div >
+        <p textAlign={'center'}>hello</p>
+           
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <Contact></Contact><NewContact /> 
     </div>
   );
 }
