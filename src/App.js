@@ -219,10 +219,6 @@ export function Home() {
         {stars}
       </Canvas>
 
-      
-      
-        
-
         <h1 style={styless.heading}>{is3D? "": "Timeline"}</h1>
 
         {is3D ? (
@@ -235,7 +231,7 @@ export function Home() {
         ) : (
           // Updated component rendering to support multiple events per year
           <div className="timeline">
-            <div className="timeline-item" onClick={handle3D}>
+            <div className="timeline-item">
               {/* <div className="tl-icon">
                 <FontAwesomeIcon icon={faBriefcaseMedical} />
               </div> */}

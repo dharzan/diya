@@ -77,13 +77,13 @@
   gap: 20px; /* Space between icon and content */
   padding: 20px; /* Padding inside each timeline item */
   position: relative; /* For absolute positioning of the icon */
-  cursor: pointer;
+ 
  
  }
- .timeline-item:hover{
+ /* .timeline-item:hover{
   background-color: grey;
 
- }
+ } */
  .tl-icon {
   position: relative;
   left: 0;
@@ -148,7 +148,7 @@
   gap: 20px; /* Space between icon and content */
   padding: 20px; /* Padding inside each timeline item */
   position: relative; /* For absolute positioning of the icon */
-  cursor: pointer;
+ 
 
  }
  .polka-dot {
@@ -162,10 +162,10 @@
   background-repeat: repeat;
 }
 
- .about-timeline-item:hover{
+ /* .about-timeline-item:hover{
   background-color: grey;
 
- }
+ } */
 
  .about-content{
   display: grid;
