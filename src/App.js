@@ -212,7 +212,7 @@ export function Home() {
     
       <div style={styless.app}>
       <button onClick={handle3D} style={buttonStyle}>
-          <FontAwesomeIcon icon={faBriefcaseMedical} />
+          <FontAwesomeIcon icon={faBrain} />
         </button>
       <Canvas position={[0,0,-500]}>
         <OrbitControls/>
@@ -280,10 +280,9 @@ export function Home() {
                   • Curate visually appealing bulletin boards and craft door decorations to enhance the ambiance of resident floors, ensuring a warm and inviting environment for incoming students
                 </p>
                 <p>
-                  • Decorate bulletin boards and make door decs to make the
-                  floor feel more welcoming to new students
-                </p>
                 •  Manage mail distribution via Starrez, efficiently assigning mail to respective mailboxes, and administer essential supplies including keys and locks from the building’s front desk to residents
+                </p>
+             
               </div>
             </div>
             <div className="timeline-item">
