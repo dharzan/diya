@@ -387,6 +387,23 @@ export function Star() {
     </mesh>
   );
 }
+export function Hearts() {
+  const position = useMemo(() => {
+    // Generate a random position for each star
+    return [
+      Math.random() * 600 - 300,
+      Math.random() * 600 - 300,
+      Math.random() * 600 - 300,
+    ];
+  }, []);
+
+  return (
+    <mesh position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshBasicMaterial color="#ffffff" />
+    </mesh>
+  );
+}
 
 export function DropdownMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
