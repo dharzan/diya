@@ -1,0 +1,94 @@
+*{
+   
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+   
+    
+}
+
+
+
+.header_title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+   
+    
+    text-align: center;
+    color: white;
+    font-size: large;
+    background-color: black;
+
+}
+
+.project{
+
+    display: grid;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: black;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    
+   
+  
+  
+    
+}
+
+.project1{
+    border: 1px solid black;
+    grid-row: 1 ;
+    padding:25%;
+    align-self: center;
+    margin-left: 25%;
+    
+    background-color: whitesmoke;
+    border-radius: 13%;
+}
+.project1:hover{
+    background-color: grey;
+}
+.project2{
+    border: 1px solid black;
+    grid-row: 1 ;
+    padding:25%;
+    align-self: center;
+    margin-left: 10%;
+    max-width: 2000px;
+    
+    
+    
+    background-color: whitesmoke;
+    border-radius: 13%;
+}
+.project2:hover{
+    background-color: grey;
+}
+.project3{
+    border: 1px solid black;
+    grid-row: 1 ;
+    padding:25%;
+    align-self: center;
+    margin-left: 10%;
+    margin-right: 25%;
+    
+    
+    background-color: whitesmoke;
+    border-radius: 13%;
+}
+.project3:hover{
+    background-color: grey;
+}
+
+
+
+
+
+
+
+.body{
+    background-color: black;
+}

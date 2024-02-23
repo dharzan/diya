@@ -16,7 +16,8 @@ function InteractiveMesh() {
     originalPosition.current = { ...camera.position };
   }, [camera.position]); // camera.position is a dependency, but in practice, it should be stable
 
-  const onDoubleClick = () => {
+  const onClick = () => {
+
     // Example target position for the zoom effect
     const targetPosition = { ...camera.position, z: camera.position.z + 500 };
     gsap.to(camera.position, {
@@ -25,7 +26,9 @@ function InteractiveMesh() {
       z: targetPosition.z,
       duration: 2
     });
-  };
+
+
+  }
 
   const onPointerEnter = () => {
     // Return to the original position
@@ -40,11 +43,22 @@ function InteractiveMesh() {
   };
 
   return (
-    <mesh onClick={onDoubleClick} onPointerEnter={onPointerEnter}>
-      {/* Assuming Cube is a valid component that renders correctly */}
-      <Cube />
-    </mesh>
-  );
+
+
+
+
+
+      <mesh onClick={onClick} onPointerEnter={onPointerEnter}>
+
+
+        {/* Assuming Cube is a valid component that renders correctly */}
+        <Cube />
+      </mesh>
+      
+
+   
+  )
+   
 }
 
 export function Event({ position, id, setSelectedEvent, selectedEventId }) {
@@ -79,11 +93,10 @@ export function Event({ position, id, setSelectedEvent, selectedEventId }) {
 
 
 
-export function OrbitalVisualization()
-{
+export function OrbitalVisualization() {
 
-   // Stars background
-   const stars = useMemo(() => {
+  // Stars background
+  const stars = useMemo(() => {
     return new Array(600).fill().map((_, i) => <Star key={i} />);
   }, []);
 
@@ -93,7 +106,7 @@ export function OrbitalVisualization()
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <OrbitControls />
-      <Cube/>
+      <Cube />
       {stars}
     </Canvas>
   );
@@ -119,12 +132,12 @@ function TimelineVisualization({ setSelectedEvent, selectedEventId }) {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <OrbitControls />
-      <Cube/>
-      <InteractiveMesh/>
+      <Cube />
+      <InteractiveMesh />
       {/* <Planets/> */}
-      
+
       {stars}
-      
+
 
       {events.map((event) => (
         <Event
@@ -144,7 +157,7 @@ function Timeline() {
 
   return (
     <div style={styles.app}>
-      
+
       <DropdownMenu />
       <h1>Diya Dhyani</h1>
       <div style={styles.canvasContainer}>
@@ -152,7 +165,7 @@ function Timeline() {
       </div>
       {selectedEventId && (
         <div style={styles.eventDetails} className='App'>
-           <p2>Welcome To My Galaxy</p2>
+          <p2>Welcome To My Galaxy</p2>
           {/* <button onClick={() => setSelectedEventId(null)} style={styles.closeButton}>
             
           </button> */}
@@ -170,7 +183,8 @@ function Timeline() {
 // Update styles accordingly
 export const styles = {
   app: {
-    position:'relative',
+    position: 'relative',
+    
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
@@ -179,21 +193,25 @@ export const styles = {
     backgroundColor: 'black', // Ensure space theme is always dark
     color: 'white',
     overflow: 'hidden',
+
+
+ 
+ 
   },
   canvasContainer: {
     width: '100%',
     height: '75%',
   },
   eventDetails: {
-    display:'flex',
-    justifyContent:'center',
+    display: 'flex',
+    justifyContent: 'center',
     top: '20px',
     left: '20px',
     position: 'absolute',
-   
+
     borderRadius: '5px',
     boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-    
+
     color: 'white',
     zIndex: 10,
   },

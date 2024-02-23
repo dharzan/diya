@@ -295,7 +295,7 @@ My career aspiration is to support healthcare professionals by innovating medica
     return (
       <div style={styles.app}>
         
-        <DropdownMenu />
+        
         <IntroSection />
         <div style={styles.sectionDivider}></div>
 
@@ -305,7 +305,7 @@ My career aspiration is to support healthcare professionals by innovating medica
           <Lungs/>
         </div>
         
-        
+        <DropdownMenu />
         
       </div>
     );
