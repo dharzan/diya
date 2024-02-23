@@ -1,0 +1,214 @@
+.App {
+  text-align: center;
+}
+.rightSide{
+
+  justify-content: flex-end ;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.timeline {
+  display: grid;
+  justify-content: center;
+  grid-template: auto;
+  grid-template-columns:(2 1fr);
+  gap: 20px; /* Space between each timeline item */
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  align-items: start;
+  justify-items: center;
+  
+ 
+ }
+
+ .about-timeline{
+  display: grid;
+  justify-content: center;
+  grid-template: auto;
+  grid-template-columns:(2 1fr);
+  gap: 20px; /* Space between each timeline item */
+  padding: 20px;
+
+ }
+ .timeline-item {
+  background-color: #181818; /* Background color for each item */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  display: flex; /* Use flexbox to align icon and content */
+  align-items: center; /* Align items vertically */
+  margin: 0 auto;
+  width: 90%;
+ 
+  gap: 20px; /* Space between icon and content */
+  padding: 20px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+ 
+ 
+ }
+ /* .timeline-item:hover{
+  background-color: grey;
+
+ } */
+ .tl-icon {
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-self: start;
+  justify-content: center;
+ }
+ .tl-duration, h5, p {
+  margin: 0; /* Reset margins */
+ }
+ .tl-duration {
+  display:grid;
+  text-align: center;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-bottom: 10px; /* Space between duration and title */
+  background-color:#282c34;
+  border-radius: 5px;
+  align-items: center; /* Align items vertically */
+  flex-direction: row;
+  gap: 20px; /* Space between icon and content */
+  padding: 5px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+  width:fit-content;
+  margin: 0 auto;
+ }
+ h5 {
+  text-transform: uppercase;
+  margin-bottom: 10px; /* Space between title and description */
+ }
+ /* If you want the text content to be more structured,
+ you can wrap the duration, title, and description in a div and style it with display: grid */
+ .content {
+  display: grid;
+  grid-template-rows: auto; /* Adjust based on content */
+  text-align:center;
+  font-size: 20px;
+  
+  
+  flex-wrap: wrap;
+  width:fit-content;
+  
+  gap: 10px; /* Space between grid rows */
+ }
+ .about-timeline-item{
+
+  background-color: #181818; /* Background color for each item */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  display: flex; /* Use flexbox to align icon and content */
+  align-items: center; /* Align items vertically */
+  justify-content: center;
+  align-self: center;
+  width: 90%;
+  
+
+
+  gap: 20px; /* Space between icon and content */
+  padding: 20px; /* Padding inside each timeline item */
+  position: relative; /* For absolute positioning of the icon */
+ 
+
+ }
+ .polka-dot {
+  width: 240px;
+  height: 240px;
+  background-color: #000;
+  background-image: radial-gradient(#fff 10%, transparent 11%),
+    radial-gradient(#fff 10%, transparent 11%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-repeat: repeat;
+}
+
+ /* .about-timeline-item:hover{
+  background-color: grey;
+
+ } */
+
+ .about-content{
+  display: grid;
+  grid-template-rows: auto; /* Adjust based on content */
+  text-align:start;
+  font-size: 20px;
+  
+  
+  flex-wrap: wrap;
+  width:fit-content;
+  
+  gap: 10px; /* Space between grid rows */
+ }
+ 
+ /* Example of using a ::before pseudo-element for a timeline line */
+
+ @media screen and (max-width:700px){
+  .container{
+      padding: 7rem 3rem;
+  }
+  .about-stats .progress-bars{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  .about-container .right-about{
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .timeline{
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      align-items: center;
+      justify-self:center ;
+  }
+  .main-title{
+      h2{
+          font-size: 3rem;
+          span{
+              font-size: 3rem;
+          }
+          .bg-text{
+              font-size: 4rem;
+          }
+      }
+  }
+}
+ 

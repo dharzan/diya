@@ -295,11 +295,6 @@ My career aspiration is to support healthcare professionals by innovating medica
     return (
       <div style={styles.app}>
         
-        <Canvas position={[0,0,-500]}>
-        <OrbitControls/>
-        {stars}
-
-        </Canvas>
         <DropdownMenu />
         <IntroSection />
         <div style={styles.sectionDivider}></div>

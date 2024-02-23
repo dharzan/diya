@@ -7,8 +7,7 @@ import {
   faMicroscope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import { TextureLoader } from "three";
 import "./App.css";
@@ -219,10 +218,7 @@ export function Home() {
         <button onClick={handle3D} style={buttonStyle}>
           <FontAwesomeIcon icon={faBrain} />
         </button>
-          {!is3D && <Canvas position={[0, 0, -500]}>
-            <OrbitControls />
-            {stars}
-          </Canvas>}
+         
 
           <h1 style={styless.heading}>{is3D ? "" : "Timeline"}</h1>
 
