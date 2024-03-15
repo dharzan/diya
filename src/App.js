@@ -451,7 +451,7 @@ export function DropdownMenu() {
     transition: "background-color 0.3s, color 0.3s", // Smooth transition for hover
   };
   return (
-    <div style={{ position: "fixed", top: 20, right: 20 }}>
+    <div style={{ position: "absolute", top: 20, right: 20 }}>
       <button onClick={toggleDropdown} style={buttonStyle}>
         <FontAwesomeIcon icon={faBars} />{" "}
         {/* Assuming faBars is imported for the menu icon */}
